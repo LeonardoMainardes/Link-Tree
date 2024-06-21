@@ -78,40 +78,38 @@ export function Home(){
 
 
     return(
-        <div className="flex flex-col w-full py-4 items-center justify-center">
-            <h1 className="md:text-4xl text-3xl font-bold text-white mt-20">Página Home</h1>
-            <span className="text-gray-50 mb-5 mt-5">Veja meus links 👇</span>
+            <div className="flex flex-col w-full py-4 items-center justify-center">
+                <h1 className="md:text-4xl text-3xl font-bold text-white mt-20">Página Home</h1>
+                <span className="text-gray-50 mb-5 mt-5">Veja meus links 👇</span>
 
-            <main className="flex flex-col w-11/12 max-w-xl text-center">
+                <main className="flex flex-col w-11/12 max-w-xl text-center">
 
-                {links.map((link) => (
-                    <section 
-                        className="bg-white mb-4 w-full py-2 rounded-lg select-none transition-transform hover:scale-105 cursor-pointer"
-                        key={link.id}
-                        style={{ backgroundColor: link.bg }}
-                    >
-                        <a href={link.url} target="_blank">
-                            <p className="text-base md:text-lg" style={{ color: link.color }}>{link.name}</p>
-                        </a>
-                    </section>
-                ))}
+                    {links.map((link) => (
+                        <section 
+                            className="bg-white mb-4 w-full py-2 rounded-lg select-none transition-transform hover:scale-105 cursor-pointer"
+                            key={link.id}
+                            style={{ backgroundColor: link.bg }}
+                        >
+                            <a href={link.url} target="_blank">
+                                <p className="text-base md:text-lg" style={{ color: link.color }}>{link.name}</p>
+                            </a>
+                        </section>
+                    ))}
 
-                { socialLinks && Object.keys(socialLinks).length > 0 && (
-                    <footer className="flex justify-center gap-3 my-4">
-                        <Social url={socialLinks?.youtube}>
-                            <FaYoutube size={35} color="#fff" />
-                        </Social>
-                        <Social url={socialLinks?.instagram}>
-                            <FaInstagram size={35} color="#fff" />
-                        </Social>
-                        <Social url={socialLinks?.facebook}>
-                            <FaFacebook size={35} color="#fff" />
-                        </Social>
-                    </footer>
-                )}
-
-            </main>
-
-        </div>
+                    { socialLinks && Object.keys(socialLinks).length > 0 && (
+                        <footer className="flex justify-center gap-3 my-4">
+                            <Social url={socialLinks?.youtube}>
+                                <FaYoutube size={35} color="#fff" />
+                            </Social>
+                            <Social url={socialLinks?.instagram}>
+                                <FaInstagram size={35} color="#fff" />
+                            </Social>
+                            <Social url={socialLinks?.facebook}>
+                                <FaFacebook size={35} color="#fff" />
+                            </Social>
+                        </footer>
+                    )}
+                </main>
+            </div> 
     )
 }
