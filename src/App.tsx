@@ -7,9 +7,6 @@ import { Home } from "./pages/home";
 import { Notfound } from "./pages/notfound";
 
 import { Private } from "./routes/Private";
-import { injectSpeedInsights } from "@vercel/speed-insights";
-
-injectSpeedInsights();
 
 const router = createBrowserRouter([
   {
